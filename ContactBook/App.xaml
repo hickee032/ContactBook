@@ -2,8 +2,14 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ContactBook"
+             xmlns:vm="clr-namespace:ContactBook.ViewModel"
+             xmlns:v="clr-namespace:ContactBook.View"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+
+        <DataTemplate DataType="{x:Type vm:BookViewModel}">
+            
+        </DataTemplate>
 
         <!--Brushes (Palette from: https://flatuicolors.com/palette/de)-->
         <LinearGradientBrush x:Key="BlueGreyGradient" EndPoint="0,1">
