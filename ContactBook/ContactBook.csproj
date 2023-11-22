@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppViewModel.cs" />
+    <Compile Include="Model\Contact.cs" />
     <Compile Include="Utility\ObservableObject.cs" />
     <Compile Include="Utility\RelayCommand.cs" />
     <Compile Include="ViewModel\BookViewModel.cs" />
@@ -119,7 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helper\" />
-    <Folder Include="Model\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

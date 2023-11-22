@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:ContactBook"
         mc:Ignorable="d"
         Title="ContactBook" Height="450" Width="800">
+    <Window.DataContext>
+        <local:AppViewModel/>
+    </Window.DataContext>
     <DockPanel>
         <!--Tool-->
         <Grid DockPanel.Dock="Top" Height="40" Background="{StaticResource BlueGreyGradient}">
@@ -54,7 +57,7 @@
         
         <!--Contact-->
         <Grid DockPanel.Dock="Bottom">
-            <ContentControl Content=" "/>
+            <ContentControl Content="{Binding CurrentView}"/>
         </Grid>
     </DockPanel>
 </Window>

@@ -8,7 +8,7 @@
     <Application.Resources>
 
         <DataTemplate DataType="{x:Type vm:BookViewModel}">
-            
+            <v:BookView/>
         </DataTemplate>
 
         <!--Brushes (Palette from: https://flatuicolors.com/palette/de)-->
