@@ -1,4 +1,5 @@
-﻿using ContactBook.Utility;
+﻿using ContactBook.Services;
+using ContactBook.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace ContactBook.ViewModel
 {
     public class BookViewModel : ObservableObject
     {
+        private IContactDataService _service;
         private ContactsViewModel _contactsVM;
         public ContactsViewModel ContactsVM {
             get { return _contactsVM; }
@@ -17,15 +19,16 @@ namespace ContactBook.ViewModel
         }
         public ICommand LoadContactsCommand { get; private set; }
         public ICommand LoadFavoritesCommand { get; private set; }
-        public BookViewModel() {
+        public BookViewModel(IContactDataService service) {
             ContactsVM= new ContactsViewModel();
-
+            _service= service;
             LoadContactsCommand = new RelayCommand(LoadContacts);
             LoadFavoritesCommand= new RelayCommand(LoadFavorites);
         }
 
         private void LoadContacts() {
-
+            
+            ContactsVM.LoadContacts(_service.GetContacts());
         }
         private void LoadFavorites() {
 
