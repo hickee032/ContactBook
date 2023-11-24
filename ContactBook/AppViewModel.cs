@@ -1,4 +1,5 @@
-﻿using ContactBook.Utility;
+﻿using ContactBook.Services;
+using ContactBook.Utility;
 using ContactBook.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -23,8 +24,9 @@ namespace ContactBook
         }
 
         public AppViewModel() {
+            var dataService = new MockDataService();
 
-            BookVM= new BookViewModel();
+            BookVM= new BookViewModel(dataService);
             CurrentView = BookVM;
         }
     }

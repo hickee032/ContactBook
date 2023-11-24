@@ -11,6 +11,8 @@
             <v:BookView/>
         </DataTemplate>
 
+        <BitmapImage x:Key="DefaultContactImage" UriSource="/Resources/defaultContact.png"/>
+
         <!--Brushes (Palette from: https://flatuicolors.com/palette/de)-->
         <LinearGradientBrush x:Key="BlueGreyGradient" EndPoint="0,1">
             <GradientStop Color="#FF4B6584" Offset="0.0" />

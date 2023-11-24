@@ -23,11 +23,11 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <Button Style="{StaticResource MenuTabButton}">
+                <Button Style="{StaticResource MenuTabButton}" Command="{Binding BookVM.LoadFavoritesCommand}">
                     Favorites</Button>
             </Grid>
             <Grid Grid.Column="1">
-                <Button Style="{StaticResource MenuTabButton}">
+                <Button Style="{StaticResource MenuTabButton}" Command="{Binding BookVM.LoadContactsCommand}">
                     Contacts</Button>
             </Grid>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="6" Grid.ColumnSpan="2">

@@ -18,3 +18,5 @@ C:\Users\bluep\source\repos\ContactBook\ContactBook\obj\Debug\ContactBook.csproj
 C:\Users\bluep\source\repos\ContactBook\ContactBook\obj\Debug\ContactBook.csproj.CoreCompileInputs.cache
 C:\Users\bluep\source\repos\ContactBook\ContactBook\obj\Debug\ContactBook.exe
 C:\Users\bluep\source\repos\ContactBook\ContactBook\obj\Debug\ContactBook.pdb
+C:\Users\bluep\source\repos\ContactBook\ContactBook\obj\Debug\View\ContactItemView.g.cs
+C:\Users\bluep\source\repos\ContactBook\ContactBook\obj\Debug\View\ContactItemView.baml

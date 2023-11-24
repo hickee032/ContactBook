@@ -6,12 +6,23 @@
              xmlns:local="clr-namespace:ContactBook.View"
              xmlns:v="clr-namespace:ContactBook.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="Yellow">
-    <Grid>
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="225"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
+        <Grid Grid.Column="0">
+            <ListView ItemsSource="{Binding ContactsVM.Contacts}" SelectedItem="{Binding ContactsVM.SelectedContact}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <v:ContactItemView/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid Grid.Column="1">
+            
+        </Grid>
     </Grid>
 </UserControl>
