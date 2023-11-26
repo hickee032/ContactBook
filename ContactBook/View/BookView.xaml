@@ -22,7 +22,13 @@
             </ListView>
         </Grid>
         <Grid Grid.Column="1">
-            
+            <ScrollViewer>
+                <ContentControl>
+                    <ContentControl.Content>
+                        <v:DetailView DataContext="{Binding ContactsVM}"/>
+                    </ContentControl.Content>
+                </ContentControl>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </UserControl>

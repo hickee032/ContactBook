@@ -41,6 +41,35 @@
                     </Button>
                 </Grid>
             </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Bottom" Orientation="Horizontal">
+                <Button Style="{StaticResource MenuIconButton}" Background="{StaticResource MaximumBlueGreen}"
+                        Width="90" Height="40" Margin="5">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Resources/saveIcon.png"/>
+                            <Label FontWeight="Bold">Save</Label>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
         </Grid>
+        <!--phone-->
+        <StackPanel Grid.Row="1" Margin="5">
+            <StackPanel>
+                <Border Style="{StaticResource DetailBorder}">
+                    <Label FontWeight="Bold" Foreground="#FFF5F7F9" Content="Phone"/>
+                </Border>
+                <StackPanel>
+                    <!--home-->
+                    <Label Style="{StaticResource DetailLabel}" Content="Home"/>
+                    <Label Style="{StaticResource ContentLabel}"
+                        Content="{Binding SelectedContact.PhoneNumbers[0], FallbackValue=NULL}"/>
+                    <!--cell phone-->
+                    <Label  Style="{StaticResource DetailLabel}" Content="Cell"/>
+                    <Label Style="{StaticResource ContentLabel}"
+                        Content="{Binding SelectedContact.PhoneNumbers[1], FallbackValue=NULL}"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>
