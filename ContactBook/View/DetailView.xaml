@@ -71,5 +71,31 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
+
+        <!--Email Details-->
+        <StackPanel Grid.Row="2" Margin="5">
+            <StackPanel>
+                <Border Style="{StaticResource DetailBorder}">
+                    <Label FontWeight="Bold" Foreground="#FFF5F7F9" Content="Email"/>
+                </Border>
+
+                <StackPanel>
+                    <!--Home Numbers-->
+                    <Label Style="{StaticResource DetailLabel}" Content="Home"/>
+                    <Label Style="{StaticResource ContentLabel}"
+                   Content="{Binding SelectedContact.Emails[0], FallbackValue=N/A}"/>
+                    <TextBox  Style="{StaticResource EditBox}"
+                      Text="{Binding SelectedContact.Emails[0], FallbackValue=N/A, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <!--Cell Numbers-->
+                    <Label Style="{StaticResource DetailLabel}" Content="Cell"/>
+                    <Label Style="{StaticResource ContentLabel}"
+                   Content="{Binding SelectedContact.Emails[1], FallbackValue=N/A}"/>
+                    <TextBox  Style="{StaticResource EditBox}"
+                      Text="{Binding SelectedContact.Emails[1], FallbackValue=N/A, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
     </Grid>
 </UserControl>
