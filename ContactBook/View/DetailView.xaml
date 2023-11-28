@@ -27,7 +27,9 @@
                                HorizontalAlignment="Center"
                                FontSize="24"/>
                     </StackPanel>
-                    <CheckBox Content="isFavorite"/>
+                    <CheckBox Style="{StaticResource favoriteCheckbox}" 
+                              IsChecked="{Binding SelectedContact.IsFavorite}"
+                              Command="{Binding SaveCommand}"/>
                 </StackPanel>
                 <Grid Height="125" Width="125">
                     <Image Height="125" Width="125"
