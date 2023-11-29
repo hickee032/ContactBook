@@ -30,29 +30,38 @@ namespace ContactBook.ViewModel
         public bool IsDisplayMode {
             get { return !_isEditMode; }
         }
-
+        private IEnumerable<Contact> _contacts;
         public ObservableCollection<Contact> Contacts { get; set; }
 
         public ICommand EditCommand { get; private set; }
         public ICommand SaveCommand { get; private set; }
         public ICommand UpdateCommand { get; private set; }
+        public ICommand BrowseImageCommand { get; private set; }
 
         private IContactDataService _dataService;
+        private IDialogService _dialogService;
+        public ContactsViewModel(IContactDataService dataService, IDialogService dialogService) {
 
-        public ContactsViewModel(IContactDataService dataService) {
             _dataService = dataService;
+            _dialogService = dialogService;
+            _contacts = dataService.GetContacts();
                 
             EditCommand = new RelayCommand(Edit, CanEdit);
             SaveCommand = new RelayCommand(Save, IsEdit);
             UpdateCommand = new RelayCommand(Update);
+            BrowseImageCommand = new RelayCommand(BrowseImage, CanEdit);
+        }
 
+        private void BrowseImage() {
+            var filePath = _dialogService.OpenFile("Image files|*.bmp;*.jpg;*.jpeg;*.png|All files");
+            SelectedContact.ImagePath = filePath;
         }
         private void Update() {
-            _dataService.Save(Contacts);
+            _dataService.Save(_contacts);
         }
 
         private void Save() {
-            _dataService.Save(Contacts);
+            _dataService.Save(_contacts);
             IsEditMode = false;
             OnPropertyChanged("SelectedContact");
         }

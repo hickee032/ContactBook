@@ -58,7 +58,9 @@
     <Compile Include="AppViewModel.cs" />
     <Compile Include="Model\Contact.cs" />
     <Compile Include="Services\IContactDataService.cs" />
+    <Compile Include="Services\IDialogService.cs" />
     <Compile Include="Services\MockDataService.cs" />
+    <Compile Include="Services\WindowDialogService.cs" />
     <Compile Include="Utility\ObservableObject.cs" />
     <Compile Include="Utility\RelayCommand.cs" />
     <Compile Include="ViewModel\BookViewModel.cs" />
