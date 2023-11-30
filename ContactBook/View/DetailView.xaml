@@ -37,6 +37,8 @@
                         FallbackValue={StaticResource DefaultContactImage},
                         TargetNullValue={StaticResource DefaultContactImage}}"/>
                     <Button Style="{StaticResource MenuIconButton}" Background="{StaticResource GloomyPurple}"
+                            Command="{Binding BrowseImageCommand}"
+                            Visibility="{Binding IsEditMode, Converter={StaticResource IsEditConverter}}"
                             VerticalAlignment="Bottom" HorizontalAlignment="Right"
                             Foreground="Black" FontWeight="DemiBold">
                         Browse

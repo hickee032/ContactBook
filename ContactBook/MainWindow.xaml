@@ -31,6 +31,7 @@
                     Contacts</Button>
             </Grid>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="6" Grid.ColumnSpan="2">
+                <!--add-->
                 <Button Style="{StaticResource MenuIconButton}"
                         Background="{StaticResource BlueGreyGradient}"
                         Command="{Binding BookVM.ContactsVM.AddCommand}">
@@ -38,13 +39,15 @@
                         <Image Height="30" Width="30" Source="/Resources/addIcon.png" />
                     </Button.Content>
                 </Button>
-                <Button Style="{StaticResource MenuIconButton}"
+                <!--edit-->
+                    <Button Style="{StaticResource MenuIconButton}"
                         Background="{StaticResource BlueGreyGradient}"
                         Command="{Binding BookVM.ContactsVM.EditCommand}">
                     <Button.Content>
                         <Image Height="30" Width="30" Source="/Resources/createIcon.png" />
                     </Button.Content>
                 </Button>
+                <!--remove-->
                 <Button Style="{StaticResource MenuIconButton}"
                         Background="{StaticResource BlueGreyGradient}"
                         Command="{Binding BookVM.ContactsVM.DeleteCommand}">

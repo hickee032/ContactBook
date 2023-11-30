@@ -30,13 +30,15 @@ namespace ContactBook.ViewModel
         public bool IsDisplayMode {
             get { return !_isEditMode; }
         }
-        private IEnumerable<Contact> _contacts;
+        private List<Contact> _contacts;
         public ObservableCollection<Contact> Contacts { get; set; }
 
         public ICommand EditCommand { get; private set; }
         public ICommand SaveCommand { get; private set; }
         public ICommand UpdateCommand { get; private set; }
         public ICommand BrowseImageCommand { get; private set; }
+        public ICommand AddCommand { get; private set; }
+        public ICommand DeleteCommand { get; private set; }
 
         private IContactDataService _dataService;
         private IDialogService _dialogService;
@@ -44,12 +46,37 @@ namespace ContactBook.ViewModel
 
             _dataService = dataService;
             _dialogService = dialogService;
-            _contacts = dataService.GetContacts();
+            _contacts = dataService.GetContacts().ToList();
                 
             EditCommand = new RelayCommand(Edit, CanEdit);
             SaveCommand = new RelayCommand(Save, IsEdit);
             UpdateCommand = new RelayCommand(Update);
             BrowseImageCommand = new RelayCommand(BrowseImage, CanEdit);
+            AddCommand = new RelayCommand(Add);
+            DeleteCommand = new RelayCommand(Delete, CanDelete);
+
+        }
+
+
+        private void Delete() {
+            Contacts.Remove(SelectedContact);
+            _contacts.Remove(SelectedContact);
+            Save();
+        }
+        private bool CanDelete() {
+            return SelectedContact == null ? false : true;
+        }
+
+        private void Add() {
+            var newContact = new Contact {
+                Name = "N/A",
+                PhoneNumbers = new string[2],
+                Emails= new string[2],
+                Locations= new string[2]
+            };
+            Contacts.Add(newContact);
+            _contacts.Add(newContact);
+            SelectedContact= newContact;
         }
 
         private void BrowseImage() {
