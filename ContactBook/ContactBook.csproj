@@ -62,6 +62,7 @@
     <Compile Include="Model\Contact.cs" />
     <Compile Include="Services\IContactDataService.cs" />
     <Compile Include="Services\IDialogService.cs" />
+    <Compile Include="Services\JsonContactDataService.cs" />
     <Compile Include="Services\MockDataService.cs" />
     <Compile Include="Services\WindowDialogService.cs" />
     <Compile Include="Utility\ObservableObject.cs" />
