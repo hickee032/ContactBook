@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppViewModel.cs" />
+    <Compile Include="Helper\Converters.cs" />
     <Compile Include="Model\Contact.cs" />
     <Compile Include="Services\IContactDataService.cs" />
     <Compile Include="Services\IDialogService.cs" />
@@ -141,8 +142,6 @@
     <Resource Include="Resources\saveIcon.png" />
     <Resource Include="Resources\uncheckedStar.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helper\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

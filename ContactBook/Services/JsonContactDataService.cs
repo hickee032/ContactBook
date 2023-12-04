@@ -11,7 +11,7 @@ namespace ContactBook.Services
 {
     public class JsonContactDataService : IContactDataService
     {
-        private readonly string _dataPath = "Resources\\contactdata.json";
+        private readonly string _dataPath = "C:\\Users\\bluep\\source\\repos\\ContactBook\\ContactBook\\Resources\\contactdata.json";
         public IEnumerable<Contact> GetContacts() {
             if (!File.Exists(_dataPath)) {
                 File.Create(_dataPath).Close();

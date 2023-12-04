@@ -11,7 +11,7 @@ namespace ContactBook.ViewModel
 {
     public class BookViewModel : ObservableObject
     {
-        private IContactDataService _dataservice;
+        private IContactDataService _dataService;
         private IDialogService _dialogService;
 
         private ContactsViewModel _contactsVM;
@@ -19,25 +19,27 @@ namespace ContactBook.ViewModel
             get { return _contactsVM; }
             set { OnPropertyChanged(ref _contactsVM, value); }
         }
-        public ICommand LoadContactsCommand { get; private set; }
+
         public ICommand LoadFavoritesCommand { get; private set; }
-        public BookViewModel(IContactDataService dataservice, IDialogService dialogService) {
+        public ICommand LoadContactsCommand { get; private set; }
 
+        public BookViewModel(IContactDataService dataService, IDialogService dialogService) {
+            _dialogService = dialogService;
+            _dataService = dataService;
 
-            _dataservice = dataservice;
+            ContactsVM = new ContactsViewModel(dataService, dialogService);
+            LoadContacts();
 
-            ContactsVM = new ContactsViewModel(dataservice, dialogService);
-
+            LoadFavoritesCommand = new RelayCommand(LoadFavorites);
             LoadContactsCommand = new RelayCommand(LoadContacts);
-            LoadFavoritesCommand= new RelayCommand(LoadFavorites);
         }
 
         private void LoadContacts() {
-            
-            ContactsVM.LoadContacts(_dataservice.GetContacts());
+            ContactsVM.LoadContacts(_dataService.GetContacts());
         }
+
         private void LoadFavorites() {
-            var favorites = _dataservice.GetContacts().Where(c => c.IsFavorite);
+            var favorites = _dataService.GetContacts().Where(c => c.IsFavorite);
             ContactsVM.LoadContacts(favorites);
         }
     }

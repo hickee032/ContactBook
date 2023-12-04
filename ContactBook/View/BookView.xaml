@@ -12,6 +12,7 @@
             <ColumnDefinition Width="225"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        
         <Grid Grid.Column="0">
             <ListView ItemsSource="{Binding ContactsVM.Contacts}" SelectedItem="{Binding ContactsVM.SelectedContact}">
                 <ListView.ItemTemplate>

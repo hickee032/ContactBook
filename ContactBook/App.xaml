@@ -4,14 +4,20 @@
              xmlns:local="clr-namespace:ContactBook"
              xmlns:vm="clr-namespace:ContactBook.ViewModel"
              xmlns:v="clr-namespace:ContactBook.View"
+             xmlns:helper="clr-namespace:ContactBook.Helper"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-
-        <DataTemplate DataType="{x:Type vm:BookViewModel}">
+        <!--Data Templates-->
+        <DataTemplate DataType="{x:Type vm:BookViewModel}" >
             <v:BookView/>
         </DataTemplate>
 
-        <BitmapImage x:Key="DefaultContactImage" UriSource="/Resources/defaultContact.png"/>
+        <!--Images-->
+        <BitmapImage x:Key="DefaultContactImage" UriSource="/Resources/defaultContact.png" />
+
+        <!--Converters-->
+        <helper:BoolToVisibilityConverter x:Key="IsEditConverter"/>
+        <helper:NullToVisibilityConverter x:Key="SelectedContactConverter"/>
 
         <!--Brushes (Palette from: https://flatuicolors.com/palette/de)-->
         <LinearGradientBrush x:Key="BlueGreyGradient" EndPoint="0,1">
@@ -48,7 +54,7 @@
         <SolidColorBrush x:Key="MaximumBlueGreen" Color="#FF2BCBBA"/>
 
         <SolidColorBrush x:Key="AlmostBlack" Color="#FF131313"/>
-        
+
         <!--Control Styles-->
         <Style x:Key="MenuTabButton" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource BlueGreyGradient}"/>
@@ -117,26 +123,24 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type CheckBox}">
                         <StackPanel Orientation="Horizontal">
-                            <Image x:Name="checkboxImage" Source="\Resources\uncheckedStar.png" Width="32"/>
+                            <Image x:Name="checkboxImage" Source="/Resources/uncheckedStar.png" Width="32"/>
                             <ContentPresenter/>
                         </StackPanel>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter TargetName="checkboxImage" Property="Source" Value="\Resources\checkedStar.png"/>
+                                <Setter TargetName="checkboxImage" Property="Source" Value="/Resources/checkedStar.png"/>
                             </Trigger>
                             <MultiTrigger>
                                 <MultiTrigger.Conditions>
                                     <Condition Property="IsMouseOver" Value="True"/>
                                     <Condition Property="IsChecked" Value="False"/>
                                 </MultiTrigger.Conditions>
-                                <Setter TargetName="checkboxImage" Property="Source" Value="\Resources\hoverStar.png"/>
+                                <Setter TargetName="checkboxImage" Property="Source" Value="/Resources/hoverStar.png"/>
                             </MultiTrigger>
-                            
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-
     </Application.Resources>
 </Application>

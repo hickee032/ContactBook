@@ -22,3 +22,6 @@ C:\Users\bluep\source\repos\ContactBook\ContactBook\obj\Debug\View\ContactItemVi
 C:\Users\bluep\source\repos\ContactBook\ContactBook\obj\Debug\View\ContactItemView.baml
 C:\Users\bluep\source\repos\ContactBook\ContactBook\obj\Debug\View\DetailView.g.cs
 C:\Users\bluep\source\repos\ContactBook\ContactBook\obj\Debug\View\DetailView.baml
+C:\Users\bluep\source\repos\ContactBook\ContactBook\bin\Debug\Newtonsoft.Json.dll
+C:\Users\bluep\source\repos\ContactBook\ContactBook\bin\Debug\Newtonsoft.Json.xml
+C:\Users\bluep\source\repos\ContactBook\ContactBook\obj\Debug\ContactBook.csproj.CopyComplete
