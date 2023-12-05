@@ -29,7 +29,7 @@
                 <StackPanel Orientation="Horizontal">
                     <StackPanel HorizontalAlignment="Center">
                         <TextBox  Style="{StaticResource EditBox}"
-                          Text="{Binding SelectedContact.FirstName, FallbackValue=NULL, Mode=TwoWay}"
+                          Text="{Binding SelectedContact.Name, FallbackValue=NULL, Mode=TwoWay}"
                           Visibility="{Binding IsEditMode, Converter={StaticResource IsEditConverter}}"
                           VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                           Margin="5"/>
